@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* header */
+#wrap{
+  width: 100vw;
+  min-width: 536px;
+  margin: 0 auto;
+}
+a:hover{
+  cursor: pointer;
+}
+.w1280{
+  width: 1280px;
+  margin: 0 auto;
+}
+.header{
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo{
+  display: flex;
+  flex-flow: row nowrap;
+}
+.header .logo li{
+  height: 52px;
+  text-align: center;
+}
+.header .logo li img{
+  height: 100%;
+}
+.header h1{
+  line-height: 52px;
+  font-weight: 900;
+  padding: 0 10px;
+}
+.header .job>ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.header .job li {
+  font-size: 14px;
+  padding: 0 10px;
+  line-height: 52px;
+}
+.header .job>ul>li:last-child{
+  padding-right: 20px;
+}
+.header .job_tree{
+  display: none;
+}
+/* job 버튼 */
+.header .job .job_btn{
+  display: none;
+}
+/* /Header */
+/* main */
+main{
+  height: 700px !important;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+/* /main */
+/* Footer */
+footer{
+  border-top: 1px solid #000;
+  background-color: #2f3238;
+}
+footer .footer{
+  margin-top: 46px;
+  color: #b1b3b9;
+  padding-bottom: 30px;
+  font-size: 12px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.footer .footer_info ul{
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 20px 0;
+}
+.footer .footer_info ul li{
+  padding: 0 13px;
+  background: url('../images/footer_line.png') no-repeat;
+}
+.footer .footer_info ul li:first-child{
+  padding-left: 0;
+  background: none;
+}
+.footer .footer_info p{
+  padding: 10px 0;
+  line-height: 1.25;
+}
+.footer .footer_btn{
+  text-align: center;
+}
+.footer .footer_btn .famil_btn{
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 2.5;
+  width: 250px;
+  border: 1px solid #474a51;
+  font-weight: 900;
+}
+.footer .footer_btn .famil_list{
+  border: 1px solid #474a51;
+  border-top: 0;
+  padding: 10px;
+  width: 230px;
+}
+.footer .footer_btn .famil_list>ul{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  border-bottom: 1px solid #474a51;
+}
+.footer .footer_btn .famil_list li{
+  padding: 12px 0;
+}
+
+/* 반응형 */
+@media screen and (max-width:1132px){
+  /* 메뉴 우측에 붙이기 */
+  .header .job{
+    position: fixed;
+    right: -100%;
+    top: 52px;
+    z-index: 99;
+    transition: all 0.5s;
+  }
+  .header .job>ul{
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  .header .job>ul li{
+    width: 90%;
+    border-bottom: 1px solid #CCC;
+  }
+  .header .job>ul>li:last-child{
+    padding-right: 10px;
+  }
+  .header .job_tree{
+    display: none;
+  }
+  /* job 버튼 */
+  .header .job_btn{
+    display: block;
+    width: 30px;
+    margin: 0 20px;
+    cursor: pointer;
+  }
+  .header .job_btn span{
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #000;
+  }
+  .header .job_btn_open span:nth-child(2){
+    margin: 8px 0;
+  }
+  /* 닫는 버튼 */
+  .header .job_btn_close{
+    display: none;
+    position: relative;
+  }
+  .header .job_btn_close span{
+    position: absolute;
+    z-index: 100;
+  }
+  .header .job_btn_close span:nth-child(1){
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .header .job_btn_close span:nth-child(2){
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+
+}
+
+
